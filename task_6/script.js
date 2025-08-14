@@ -5,7 +5,7 @@ const timeNow = document.getElementById('time-now');
 const toNewYear= document.getElementById('to-new-year');
 
 let date = new Date();
-let day =date.getDay();
+let day = date.getDay();
 let hour = date.getHours();
 
 let newYear; 
