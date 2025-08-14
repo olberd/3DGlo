@@ -18,9 +18,13 @@ const getTimeRemaining = () => {
     const updateClock = () => {
         let getTime = getTimeRemaining();
 
-        timerHours.textContent = (getTime.hours > 9 ? getTime.hours : '0' + getTime.hours);
-        timerMinutes.textContent = (getTime.minutes > 9 ? getTime.minutes : '0' + getTime.minutes);
-        timerSeconds.textContent = (getTime.seconds > 9) ? getTime.seconds : '0' + getTime.seconds;
+        // timerHours.textContent = (getTime.hours > 9 ? getTime.hours : '0' + getTime.hours);
+        // timerMinutes.textContent = (getTime.minutes > 9 ? getTime.minutes : '0' + getTime.minutes);
+        // timerSeconds.textContent = (getTime.seconds > 9) ? getTime.seconds : '0' + getTime.seconds;
+
+        timerHours.textContent = String(getTime.hours).padStart(2, '0');
+        timerMinutes.textContent = String(getTime.minutes).padStart(2, '0');
+        timerSeconds.textContent = String(getTime.seconds).padStart(2, '0');
 
         if (getTime.timeRemaining <= 0) {
             clearInterval(idInterval);
