@@ -23,7 +23,8 @@ if (hour >= 6 && hour < 12) {
     greeting = 'ночи!';
 }
 
-dayWeek.innerText = date.toLocaleString('ru', {weekday: 'long'})
+weekday = date.toLocaleString('ru', {weekday: 'long'})
+dayWeek.innerText = weekday.charAt(0).toUpperCase() + weekday.slice(1);
 
     dayTime.innerText = greeting;
 timeNow.innerText = date.toLocaleTimeString('en-US', {
