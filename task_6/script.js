@@ -5,7 +5,6 @@ const timeNow = document.getElementById('time-now');
 const toNewYear= document.getElementById('to-new-year');
 
 let date = new Date();
-let day = date.getDay();
 let hour = date.getHours();
 
 let newYear; 
@@ -13,16 +12,6 @@ let oneDay;
 let daysLeft;
 
 let greeting;
-
-let days = [
-    'воскресенье',
-    'понедельник',
-    'вторник',
-    'среда',
-    'четверг',
-    'пятница',
-    'суббота'
-]
 
 if (hour >= 6 && hour < 12) {
     greeting = 'утро!';
@@ -34,9 +23,9 @@ if (hour >= 6 && hour < 12) {
     greeting = 'ночи!';
 }
 
+dayWeek.innerText = date.toLocaleString('ru', {weekday: 'long'})
 
-dayWeek.innerText = days[day];
-dayTime.innerText = greeting;
+    dayTime.innerText = greeting;
 timeNow.innerText = date.toLocaleTimeString('en-US', {
     hour: '2-digit',
     minute: '2-digit',

@@ -31,6 +31,7 @@ const getTimeRemaining = () => {
     };
 
     idInterval = setInterval(updateClock, 1000);
+    updateClock(); // первый запуск
 
 };
 
