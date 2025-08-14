@@ -31,7 +31,7 @@ const getTimeRemaining = () => {
     };
 
     updateClock();
-    
+
 };
 
 export default timer
