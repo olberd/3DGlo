@@ -9,10 +9,17 @@ const menu = () => {
     }
 
     menuBtn.addEventListener('click', handleMenu);
+    //
+    // closeBtn.addEventListener('click', handleMenu);
+    //
+    // menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu))
 
-    closeBtn.addEventListener('click', handleMenu);
+    menu.addEventListener('click', (e) => {
+        if (e.target.classList.contains('close-btn') || e.target.matches('a')) {
+            handleMenu();
+        }
+    })
 
-    menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu))
 
 }
 
