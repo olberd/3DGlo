@@ -9,13 +9,26 @@ const menu = () => {
             menu.classList.toggle('active-menu');
         }
 
-        menuBtn.addEventListener('click', handleMenu);
+        // menuBtn.addEventListener('click', handleMenu);
 
-        menu.addEventListener('click', (e) => {
-            if (e.target.classList.contains('close-btn') ||
-                e.target.matches('a')) {
+        // menu.addEventListener('click', (e) => {
+        //     if (e.target.classList.contains('close-btn') ||
+        //         e.target.matches('a')) {
+        //
+        //         handleMenu();
+        //     } else if (!e.target.matches('menu')) {
+        //         handleMenu();
+        //     }
+        //
+        // });
 
+        document.addEventListener('click', (e) => {
+            if(e.target.classList.contains('close-btn') || e.target.matches('.menu, .menu>img, .menu>small')) {
                 handleMenu();
+            } else {
+                if(!e.target.closest('.menu')) {
+                    menu.classList.remove('active-menu');
+                }
             }
         });
     };
