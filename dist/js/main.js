@@ -40,6 +40,16 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
+/***/ "./modules/helpers.js":
+/*!****************************!*\
+  !*** ./modules/helpers.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   animate: () => (/* binding */ animate)\n/* harmony export */ });\nconst animate = (modal) => {\r\n    if (window.innerWidth > 768) {\r\n        modal.style.opacity = '0';\r\n        modal.style.display = 'block';\r\n        let step = 0.5;\r\n\r\n        let interval = setInterval( () =>{\r\n            if (modal.style.opacity >= 1)\r\n                clearInterval(interval);\r\n\r\n            step += 0.1;\r\n            modal.style.opacity = step.toString();\r\n\r\n        }, 100);\r\n\r\n    } else {\r\n        modal.style.display = 'block';\r\n    }\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./modules/helpers.js?\n}");
+
+/***/ }),
+
 /***/ "./modules/menu.js":
 /*!*************************!*\
   !*** ./modules/menu.js ***!
@@ -56,7 +66,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => {\r\n    const modal = document.querySelector('.popup');\r\n    const closeBtn = modal.querySelector('.popup-close');\r\n    const buttons = document.querySelectorAll('.popup-btn');\r\n\r\n    buttons.forEach(btn => {\r\n        btn.addEventListener('click', () => {\r\n\r\n            if (window.innerWidth > 768) {\r\n                modal.style.opacity = '0';\r\n                modal.style.display = 'block';\r\n                let step = 0.1;\r\n\r\n                let interval = setInterval( () =>{\r\n                    if (modal.style.opacity >= 1)\r\n                        clearInterval(interval);\r\n\r\n                    step += 0.05;\r\n                    modal.style.opacity = step.toString();\r\n\r\n                    }, 100);\r\n\r\n            } else {\r\n                modal.style.display = 'block';\r\n            }\r\n\r\n        });\r\n    });\r\n\r\n    modal.addEventListener('click', (e) => {\r\n        if (!e.target.closest('.popup-content') ||\r\n            e.target.classList.contains('popup-close')){\r\n\r\n            modal.style.display = 'none';\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack:///./modules/modal.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./modules/helpers.js\");\n\r\n\r\nconst modal = () => {\r\n    const modal = document.querySelector('.popup');\r\n    const buttons = document.querySelectorAll('.popup-btn');\r\n\r\n    buttons.forEach(btn => {\r\n        btn.addEventListener('click', () => {\r\n\r\n            (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.animate)(modal);\r\n\r\n            // if (window.innerWidth > 768) {\r\n            //     modal.style.opacity = '0';\r\n            //     modal.style.display = 'block';\r\n            //     let step = 0.1;\r\n            //\r\n            //     let interval = setInterval( () =>{\r\n            //         if (modal.style.opacity >= 1)\r\n            //             clearInterval(interval);\r\n            //\r\n            //         step += 0.05;\r\n            //         modal.style.opacity = step.toString();\r\n            //\r\n            //         }, 100);\r\n            //\r\n            // } else {\r\n            //     modal.style.display = 'block';\r\n            // }\r\n\r\n        });\r\n    });\r\n\r\n    modal.addEventListener('click', (e) => {\r\n        if (!e.target.closest('.popup-content') ||\r\n            e.target.classList.contains('popup-close')){\r\n\r\n            modal.style.display = 'none';\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack:///./modules/modal.js?\n}");
 
 /***/ }),
 
