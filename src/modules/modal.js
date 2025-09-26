@@ -6,27 +6,7 @@ const modal = () => {
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-
             animate(modal);
-
-            // if (window.innerWidth > 768) {
-            //     modal.style.opacity = '0';
-            //     modal.style.display = 'block';
-            //     let step = 0.1;
-            //
-            //     let interval = setInterval( () =>{
-            //         if (modal.style.opacity >= 1)
-            //             clearInterval(interval);
-            //
-            //         step += 0.05;
-            //         modal.style.opacity = step.toString();
-            //
-            //         }, 100);
-            //
-            // } else {
-            //     modal.style.display = 'block';
-            // }
-
         });
     });
 
